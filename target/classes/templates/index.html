@@ -2,10 +2,47 @@
 <html xmlns:th="http://thymeleaf.org"
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"
+	type="text/css">
+<link rel="stylesheet" href="style/style.css" type="text/css">
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+	integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+	crossorigin="anonymous">
+
+<!-- jQuery library -->
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 <title>Evento App</title>
 </head>
 <body>
-	<p>Index page!</p>
+	<div class="container">
+		<h1>Lista de Eventos</h1>
+		<h3 class="btn btn-primary btn-addEvento">
+			<a href="/addEvento">Cadastrar Evento</a>
+		</h3>
+		<table class="table">
+			<thead>
+				<th>Nome</th>
+				<th>Local</th>
+				<th>Data</th>
+				<th>Horário</th>
+			</thead>
+			<tbody>
+				<tr th:each="evento : ${eventos}">
+					<td><span th:text="${evento.nome}"></span></td>
+					<td><span th:text="${evento.local}"></span></td>
+					<td><span th:text="${evento.data}"></span></td>
+					<td><span th:text="${evento.horario}"></span></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
 </body>
 </html>
