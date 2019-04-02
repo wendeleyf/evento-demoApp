@@ -20,13 +20,32 @@
 </head>
 <body>
 	<div class="container">
-		<h3>Cadastrar Evento</h3>
+		<h2>Cadastrar Evento</h2>
 		<form method="post">
-			<label>Nome:</label> <input type="text" name="nome" value="">
-			<label>Local:</label> <input type="text" name="local" value="">
-			<label>Data:</label> <input type="date" name="data" value="">
-			<label>Horário:</label> <input type="text" name="horario" value="">
-			<button class="btn btn-success" type="submit">Salvar</button>
+			<div class="row">
+				<div class="col-md-12 form-group">
+					<label class="control-label">Nome:</label> <input
+						class="form-control" type="text" name="nome" value="">
+				</div>
+				<div class="col-md-6 form-group">
+					<label class="control-label">Local:</label> <input
+						class="form-control" type="text" name="local" value="">
+				</div>
+				<div class="col-md-3 form-group">
+					<label class="control-label">Data:</label> <input
+						class="form-control" type="date" name="data" value="">
+				</div>
+				<div class="col-md-3 form-group">
+					<label class="control-label">Horário:</label> <input
+						class="form-control" type="text" name="horario" value="">
+				</div>
+				<div class="col-md-2 form-group">
+					<button class="btn btn-success btn-block" type="submit">Salvar</button>
+				</div>				
+				<div class="col-md-2 form-group">
+					<a class="btn btn-danger btn-block" href="/eventos">Voltar</a>
+				</div>
+			</div>
 		</form>
 	</div>
 </body>
