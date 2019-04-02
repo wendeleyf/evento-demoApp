@@ -16,12 +16,12 @@ public class EventoController {
 	
 	@RequestMapping(value="/addEvento", method=RequestMethod.GET) // busca a view de acordo com a requisição
 	public String getFormAdd(){
-		return "/evento/formAdd";
+		return "evento/formAdd.html";
 	}
 	
 	@RequestMapping(value="/addEvento", method=RequestMethod.POST)
-	public String getFormAdd(Evento ev){
-		er.save(ev);
+	public String getFormAdd(Evento evento){
+		er.save(evento);
 		return "redirect:/addEvento";
 	}
 }

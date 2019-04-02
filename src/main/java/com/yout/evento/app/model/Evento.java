@@ -1,5 +1,6 @@
 package com.yout.evento.app.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,9 +14,14 @@ public class Evento {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
+	
+	@Column
 	private String nome;
+	@Column
 	private String local;
+	@Column
 	private String data;
+	@Column
 	private String horario;
 
 	/**
