@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"
+	type="text/css">
+<link rel="stylesheet" href="style/style.css" type="text/css">
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+	integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+	crossorigin="anonymous">
+
+<!-- jQuery library -->
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<title>Evento App</title>
+</head>
+<body>
+	<div class="container">
+		<h2>Evento</h2>
+		<table class="table">
+			<thead>
+				<th>Nome</th>
+				<th>Local</th>
+				<th>Data</th>
+				<th>Horário</th>
+			</thead>
+			<tbody>
+				<tr th:each="evento : ${evento}">
+					<td><span th:text="${evento.nome}"></span></td>
+					<td><span th:text="${evento.local}"></span></td>
+					<td><span th:text="${evento.data}"></span></td>
+					<td><span th:text="${evento.horario}"></span></td>
+				</tr>
+			</tbody>
+		</table>
+
+		<h3>Adicionar Convidado</h3>
+		<form method="post">
+			<div class="row">
+				<div class="col-md-6 form-group">
+					<label class="control-label">Nome:</label> <input
+						class="form-control" type="text" name="nome" value="">
+				</div>
+				<div class="col-md-6 form-group">
+					<label class="control-label">RG:</label> <input
+						class="form-control" type="text" name="rg" value="">
+				</div>
+
+				<div class="col-md-2 form-group">
+					<button class="btn btn-success btn-block" type="submit">
+						<i class="fas fa-check"></i> Adicionar
+					</button>
+				</div>
+				<div class="col-md-2 form-group">
+					<a class="btn btn-danger btn-block" href="/eventos"><i
+						class="fas fa-angle-left"></i> Voltar</a>
+				</div>
+			</div>
+		</form>
+	</div>
+</body>
+</html>
