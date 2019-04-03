@@ -22,6 +22,7 @@
 <title>Evento App</title>
 </head>
 <body>
+	<!-- navbar -->
 	<nav class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container-fluid">
 			<div class="navbar-header">
@@ -29,7 +30,10 @@
 			</div>
 		</div>
 	</nav>
+
+	<!-- container -->
 	<div class="container fContainer">
+		<!-- detalhes do evento -->
 		<h2>Detalhes do Evento</h2>
 		<table class="table">
 			<thead>
@@ -48,6 +52,7 @@
 			</tbody>
 		</table>
 
+		<!-- lista de convidados -->
 		<h4>Lista de Convidados</h4>
 		<table class="table">
 			<thead>
@@ -66,7 +71,10 @@
 			</tbody>
 		</table>
 
+		<!-- adicionar convidados -->
 		<h3>Adicionar Convidado</h3>
+		<!-- inclui a mensagem -->
+		<th:block th:include="msgValidation.html"></th:block>
 		<form method="post">
 			<div class="row">
 				<div class="col-md-6 form-group">
@@ -97,6 +105,8 @@
 			</div>
 		</form>
 	</div>
+
+	<!-- footer -->
 	<footer class="footer navbar-fixed-bottom navbar-inverse">
 		<p class="text-center">© 2018 Copyright</p>
 	</footer>

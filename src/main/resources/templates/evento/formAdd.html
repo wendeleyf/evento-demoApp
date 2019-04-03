@@ -4,8 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Evento App</title>
-<link rel="stylesheet" href="style/style.css"
-	type="text/css" />
+<link rel="stylesheet" href="style/style.css" type="text/css" />
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" />
 <link rel="stylesheet"
@@ -21,6 +20,7 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
 <body>
+	<!-- navbar -->
 	<nav class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container-fluid">
 			<div class="navbar-header">
@@ -28,8 +28,13 @@
 			</div>
 		</div>
 	</nav>
+
+	<!-- container -->
 	<div class="container fContainer">
+		<!-- adicionar evento -->
 		<h2>Cadastrar Evento</h2>
+		<!-- inclui a mensagem -->
+		<th:block th:include="msgValidation.html"></th:block>
 		<form method="post">
 			<div class="row">
 				<div class="col-md-12 form-group">
@@ -46,7 +51,7 @@
 				</div>
 				<div class="col-md-3 form-group">
 					<label class="control-label">Horário:</label> <input
-						class="form-control" type="text" name="horario" value="">
+						class="form-control" type="time" name="horario" value="">
 				</div>
 				<div class="col-md-2 form-group">
 					<button class="btn btn-success btn-block" type="submit">
@@ -60,6 +65,8 @@
 			</div>
 		</form>
 	</div>
+
+	<!-- footer -->
 	<footer class="footer navbar-fixed-bottom navbar-inverse">
 		<p class="text-center">© 2018 Copyright</p>
 	</footer>

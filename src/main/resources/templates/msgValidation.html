@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style/style.css" type="text/css" />
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"
+	type="text/css" />
+</head>
+
+<!-- time alert -->
+<script type="text/javascript">
+	$('.alert').fadeIn();
+	setTimeout(function() {
+		$(".alert").fadeOut();
+	}, 2000);
+</script>
+<body>
+	<div class="alert alert-danger alert-dismissible"
+		th:if="${not #strings.isEmpty(alertError)}">
+		<strong><span th:text="${alertError}"></span></strong>		
+	</div>
+	
+	<div class="alert alert-success alert-dismissible"
+		th:if="${not #strings.isEmpty(alertSuccess)}">
+		<strong><span th:text="${alertSuccess}"></span></strong>		
+	</div>
+</body>
+</html>

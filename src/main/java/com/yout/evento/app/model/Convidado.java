@@ -7,15 +7,19 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
 
 @Entity
 @Table(name = "convidado")
 public class Convidado {
 
 	@Id
+	@NotEmpty
 	private String rg;
+	@NotEmpty
 	@Column
 	private String nome;
+	@NotEmpty
 	@Column
 	private String sobrenome;
 	@Column

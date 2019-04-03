@@ -9,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
 
 @Entity
 @Table(name = "evento")
@@ -17,13 +18,17 @@ public class Evento {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-
+	
+	@NotEmpty
 	@Column
 	private String nome;
+	@NotEmpty
 	@Column
 	private String local;
+	@NotEmpty
 	@Column
 	private String data;
+	@NotEmpty
 	@Column
 	private String horario;
 	@OneToMany
