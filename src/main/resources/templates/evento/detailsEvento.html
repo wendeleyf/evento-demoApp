@@ -4,14 +4,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="style/style.css" type="text/css"/>
+<link rel="stylesheet" href="style/style.css" type="text/css" />
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"
-	type="text/css"/>
+	type="text/css" />
 <link rel="stylesheet"
 	href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
 	integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
-	crossorigin="anonymous"/>
+	crossorigin="anonymous" />
 
 <!-- jQuery library -->
 <script
@@ -23,11 +23,11 @@
 </head>
 <body>
 	<nav class="navbar navbar-inverse navbar-fixed-top">
-	  <div class="container-fluid">
-	    <div class="navbar-header">
-	      <a class="navbar-brand" href="/eventos">Evento App</a>
-	    </div>
-	  </div>
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="/eventos">Evento App</a>
+			</div>
+		</div>
 	</nav>
 	<div class="container fContainer">
 		<h2>Detalhes do Evento</h2>
@@ -48,6 +48,24 @@
 			</tbody>
 		</table>
 
+		<h4>Lista de Convidados</h4>
+		<table class="table">
+			<thead>
+				<th>RG</th>
+				<th>Nome</th>
+				<th>Sobrenome</th>
+				<th>Idade</th>
+			</thead>
+			<tbody>
+				<tr th:each="convidado : ${convidados}">
+					<td><span th:text="${convidado.rg}"></span></td>
+					<td><span th:text="${convidado.nome}"></span></td>
+					<td><span th:text="${convidado.sobrenome}"></span></td>
+					<td><span th:text="${convidado.idade}"></span></td>
+				</tr>
+			</tbody>
+		</table>
+
 		<h3>Adicionar Convidado</h3>
 		<form method="post">
 			<div class="row">
@@ -56,10 +74,17 @@
 						class="form-control" type="text" name="nome" value="">
 				</div>
 				<div class="col-md-6 form-group">
+					<label class="control-label">Sobrenome:</label> <input
+						class="form-control" type="text" name="sobrenome" value="">
+				</div>
+				<div class="col-md-6 form-group">
 					<label class="control-label">RG:</label> <input
 						class="form-control" type="text" name="rg" value="">
 				</div>
-
+				<div class="col-md-6 form-group">
+					<label class="control-label">Idade:</label> <input
+						class="form-control" type="text" name="idade" value="">
+				</div>
 				<div class="col-md-2 form-group">
 					<button class="btn btn-success btn-block" type="submit">
 						<i class="fas fa-check"></i> Adicionar
@@ -72,7 +97,7 @@
 			</div>
 		</form>
 	</div>
-	<footer class="footer navbar navbar-inverse navbar-fixed-bottom">
+	<footer class="footer navbar-fixed-bottom navbar-inverse">
 		<p class="text-center">© 2018 Copyright</p>
 	</footer>
 </body>

@@ -11,12 +11,15 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "convidado")
 public class Convidado {
-	
+
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
 	private String rg;
 	@Column
 	private String nome;
+	@Column
+	private String sobrenome;
+	@Column
+	private int idade;
 	@ManyToOne
 	private Evento evento;
 
@@ -60,5 +63,33 @@ public class Convidado {
 	 */
 	public void setNome(String nome) {
 		this.nome = nome;
-	}	
+	}
+
+	/**
+	 * @return the sobrenome
+	 */
+	public String getSobrenome() {
+		return sobrenome;
+	}
+
+	/**
+	 * @param sobrenome the sobrenome to set
+	 */
+	public void setSobrenome(String sobrenome) {
+		this.sobrenome = sobrenome;
+	}
+
+	/**
+	 * @return the idade
+	 */
+	public int getIdade() {
+		return idade;
+	}
+
+	/**
+	 * @param idade the idade to set
+	 */
+	public void setIdade(int idade) {
+		this.idade = idade;
+	}
 }
