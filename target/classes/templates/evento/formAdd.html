@@ -4,12 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Evento App</title>
+<link rel="stylesheet" href="style/style.css"
+	type="text/css" />
 <link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" />
 <link rel="stylesheet"
 	href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
 	integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
-	crossorigin="anonymous">
+	crossorigin="anonymous" />
 
 <!-- jQuery library -->
 <script
@@ -19,7 +21,14 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
 <body>
-	<div class="container">
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="/eventos">Evento App</a>
+			</div>
+		</div>
+	</nav>
+	<div class="container fContainer">
 		<h2>Cadastrar Evento</h2>
 		<form method="post">
 			<div class="row">
@@ -40,13 +49,19 @@
 						class="form-control" type="text" name="horario" value="">
 				</div>
 				<div class="col-md-2 form-group">
-					<button class="btn btn-success btn-block" type="submit"><i class="fas fa-check"></i> Salvar</button>
-				</div>				
+					<button class="btn btn-success btn-block" type="submit">
+						<i class="fas fa-check"></i> Salvar
+					</button>
+				</div>
 				<div class="col-md-2 form-group">
-					<a class="btn btn-danger btn-block" href="/eventos"><i class="fas fa-angle-left"></i> Voltar</a>
+					<a class="btn btn-danger btn-block" href="/eventos"><i
+						class="fas fa-angle-left"></i> Voltar</a>
 				</div>
 			</div>
 		</form>
 	</div>
+	<footer class="footer navbar navbar-inverse navbar-fixed-bottom">
+		<p class="text-center">© 2018 Copyright</p>
+	</footer>
 </body>
 </html>

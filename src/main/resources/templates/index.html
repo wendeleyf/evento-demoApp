@@ -5,14 +5,15 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
+<link rel="stylesheet" href="style/style.css" type="text/css" />
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"
-	type="text/css"/>
+	type="text/css" />
 <link rel="stylesheet"
 	href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
 	integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
-	crossorigin="anonymous"/>
-<link rel="stylesheet" href="../static/style/style.css" type="text/css"/>
+	crossorigin="anonymous" />
+	
 <!-- jQuery library -->
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -23,11 +24,11 @@
 </head>
 <body>
 	<nav class="navbar navbar-inverse navbar-fixed-top">
-	  <div class="container-fluid">
-	    <div class="navbar-header">
-	      <a class="navbar-brand" href="#">Evento App</a>
-	    </div>
-	  </div>
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="/eventos">Evento App</a>
+			</div>
+		</div>
 	</nav>
 	<div class="container fContainer">
 		<h2>Lista de Eventos</h2>
@@ -40,7 +41,9 @@
 			</thead>
 			<tbody>
 				<tr th:each="evento : ${eventos}">
-					<td><a style="text-decoration: none;" th:href="${(#mvc.url('EC#detailsEvento').arg(0, evento.id).build())}"><span th:text="${evento.nome}"></span></a></td>
+					<td><a style="text-decoration: none;"
+						th:href="${(#mvc.url('EC#detailsEvento').arg(0, evento.id).build())}"><span
+							th:text="${evento.nome}"></span></a></td>
 					<td><span th:text="${evento.local}"></span></td>
 					<td><span th:text="${evento.data}"></span></td>
 					<td><span th:text="${evento.horario}"></span></td>
@@ -56,7 +59,7 @@
 		</div>
 	</div>
 	<footer class="footer navbar navbar-inverse navbar-fixed-bottom">
-	 	<p class="text-center">© 2018 Copyright</p>
+		<p class="text-center">© 2018 Copyright</p>
 	</footer>
 </body>
 </html>
