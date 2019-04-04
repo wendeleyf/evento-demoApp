@@ -27,43 +27,20 @@
 	<nav class="navbar navbar-inverse myNavbar">
 		<div class="container-fluid">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="/eventos">Evento Demo App</a>
+				<a class="navbar-brand" href="/">Evento Demo App</a>
 			</div>
 		</div>
 	</nav>
 
 	<!-- container -->
-	<div class="container fContainer">
-		<!-- listar eventos -->
-		<h2>Lista de Eventos</h2>
-		<table class="table">
-			<thead>
-				<th>Nome</th>
-				<th>Local</th>
-				<th>Data</th>
-				<th>Horário</th>
-				<th>Deletar</th>
-			</thead>
-			<tbody>
-				<tr th:each="evento : ${eventos}">
-					<td><a style="text-decoration: none;"
-						th:href="${(#mvc.url('EC#getDetailsEvento').arg(0, evento.id).build())}"><span
-							class="linkTable" th:text="${evento.nome}"></span></a></td>
-					<td><span th:text="${evento.local}"></span></td>
-					<td><span th:text="${evento.data}"></span></td>
-					<td><span th:text="${evento.horario}"></span></td>
-					<td><a class="delLink"
-						th:href="${(#mvc.url('EC#delEvento').arg(0, evento.id).build())}"><i
-							class="fas fa-trash"></i></a></td>
-				</tr>
-			</tbody>
-		</table>
-		<div>
-			<a href="/addEvento">
-				<h5 class="btn btn-primary">
-					<i class="fas fa-plus"></i> Cadastrar Evento
-				</h5>
-			</a>
+	<div class="container">
+		<div class="jumbotron text-center">
+			<h1>Evento Demo App</h1>
+			<p>Está é uma aplicação simples para cadastro de eventos, com o
+				intuito de demonstrar um pouco do meu conhecimento no
+				desenvolvimento de aplicações web com Java e Spring Boot.</p>
+			<a class="btn btn-lg btn-success" href="/eventos" role="button"><i
+				class="fas fa-play-circle"></i> Start Demo App</a>
 		</div>
 	</div>
 

@@ -26,7 +26,7 @@
 	<nav class="navbar navbar-inverse myNavbar">
 		<div class="container-fluid">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="/eventos">Evento Demo App</a>
+				<a class="navbar-brand" href="/">Evento Demo App</a>
 			</div>
 		</div>
 	</nav>
@@ -70,7 +70,7 @@
 					<td><span th:text="${convidado.idade}"></span></td>
 					<td><a class="delLink"
 						th:href="${(#mvc.url('EC#delConvidado').arg(0, convidado.rg).build())}"><i
-							class="fas fa-trash"></i></a></td>
+							class="fas fa-trash" title="Remover Convidado"></i></a></td>
 				</tr>
 			</tbody>
 		</table>

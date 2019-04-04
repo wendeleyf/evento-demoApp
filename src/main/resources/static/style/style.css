@@ -1,3 +1,11 @@
+* {
+	padding: 0;
+	margin: 0;
+	vertical-align: baseline;
+	list-style: none;
+	border: 0
+}
+
 .myNavbar {
 	border-radius: 0px !important;
 }
@@ -7,7 +15,7 @@
 	margin-bottom: 5em;
 }
 
-.fContainer h5{
+.fContainer h5 {
 	margin-bottom: 1em;
 }
 
