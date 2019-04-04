@@ -1,2 +1,2 @@
-# evento-demoApp
-Sistema simples para cadastro de eventos, práticas com Java Web + Spring Boot
+# Evento Demo App
+Simple aplicação web para cadastro de eventos, aplicando conhecimento em Java Web e Spring Boot
