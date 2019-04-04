@@ -60,6 +60,7 @@
 				<th>Nome</th>
 				<th>Sobrenome</th>
 				<th>Idade</th>
+				<th>Deletar</th>
 			</thead>
 			<tbody>
 				<tr th:each="convidado : ${convidados}">
@@ -67,6 +68,9 @@
 					<td><span th:text="${convidado.nome}"></span></td>
 					<td><span th:text="${convidado.sobrenome}"></span></td>
 					<td><span th:text="${convidado.idade}"></span></td>
+					<td><a class="linkTable"
+						th:href="${(#mvc.url('EC#delConvidado').arg(0, convidado.rg).build())}"><i
+							class="fas fa-trash"></i></a></td>
 				</tr>
 			</tbody>
 		</table>

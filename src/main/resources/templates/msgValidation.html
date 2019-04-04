@@ -8,6 +8,10 @@
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"
 	type="text/css" />
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+	integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+	crossorigin="anonymous" />
 </head>
 
 <!-- time alert -->
@@ -20,12 +24,14 @@
 <body>
 	<div class="alert alert-danger alert-dismissible"
 		th:if="${not #strings.isEmpty(alertError)}">
-		<strong><span th:text="${alertError}"></span></strong>		
+		<strong><i class="fas fa-times"> </i> <span
+			th:text="${alertError}"></span></strong>
 	</div>
-	
+
 	<div class="alert alert-success alert-dismissible"
 		th:if="${not #strings.isEmpty(alertSuccess)}">
-		<strong><span th:text="${alertSuccess}"></span></strong>		
+		<strong><i class="fas fa-check"> </i> <span
+			th:text="${alertSuccess}"></span></strong>
 	</div>
 </body>
 </html>

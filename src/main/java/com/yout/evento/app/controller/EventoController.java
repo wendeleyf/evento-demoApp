@@ -72,4 +72,20 @@ public class EventoController {
 		attributes.addFlashAttribute("alertSuccess", "Convidado adicionado."); // mensagem de sucesso
 		return "redirect:/{id}";
 	}
+
+	@RequestMapping(value = "/delEvento") // deleta um evento especifico
+	public String delEvento(long id) {
+		Evento evento = er.findById(id);
+		cr.deleteAll(cr.findByEvento(evento)); // deleta todos os convidados deste evento 
+		er.delete(evento); // deleta evento
+		return "redirect:/eventos";
+	}
+
+	@RequestMapping(value = "/delConvidado") // deleta um evento especifico
+	public String delConvidado(String rg) {
+		Convidado convidado = cr.findByRg(rg);
+		String idEvento = convidado.getEvento().getId().toString(); // recebe o id do evento para o redirecionamento da view
+		cr.delete(convidado);
+		return "redirect:/" + idEvento;
+	}
 }

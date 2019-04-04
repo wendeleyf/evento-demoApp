@@ -6,4 +6,5 @@ import com.yout.evento.app.model.Evento;
 
 public interface ConvidadoRepository extends CrudRepository<Convidado, String> {
 	Iterable<Convidado> findByEvento(Evento evento); // buscar convidados por evento
+	Convidado findByRg(String rg); // buscar convidado pelo rg
 }
