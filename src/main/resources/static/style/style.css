@@ -1,19 +1,31 @@
-.fContainer {
-	margin-top: 4em;
-	margin-bottom: 5em;
+.myNavbar {
+	border-radius: 0px !important;
 }
 
-.btn-addEvento a {
-	text-decoration: none;
-	color: white;
+.fContainer {
+	margin-top: 0.5em;
+	margin-bottom: 4em;
+}
+
+.fContainer h5{
+	margin-bottom: 1em;
 }
 
 .footer {
 	padding: 1em;
 	color: white;
-	bottom: 0;
+	font-size: 11px;
 }
 
-.linkTable {
+.footer a {
+	color: white;
+}
+
+.footer a:hover {
 	text-decoration: none;
+	color: #9d9d9d;
+}
+
+.delLink {
+	color: red;
 }
