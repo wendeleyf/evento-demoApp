@@ -16,6 +16,7 @@ Simples aplicação web para cadastro de eventos, aplicando conhecimento em Java
 ```
 $ heroku create eventosdemoapp
 $ git push heroku master
+$ heroku open
 ```
 
 #### Link
