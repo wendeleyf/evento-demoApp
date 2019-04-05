@@ -14,13 +14,8 @@
 	crossorigin="anonymous" />
 </head>
 
-<!-- time alert -->
-<script type="text/javascript">
-	$('.alert').fadeIn();
-	setTimeout(function() {
-		$(".alert").fadeOut();
-	}, 2000);
-</script>
+<!-- My JavaScript -->
+<script type="text/javascript" src="js/custom.js"></script>
 <body>
 	<div class="alert alert-danger alert-dismissible"
 		th:if="${not #strings.isEmpty(alertError)}">

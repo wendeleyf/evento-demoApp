@@ -24,10 +24,10 @@ public class ImplementsUserDetailsService implements UserDetailsService {
 		Usuario usuario = ur.findByLogin(login);
 
 		// se usuário vier vazio lance uma exceção
-		if (usuario.equals(null)) {
-			throw new UsernameNotFoundException("Usuário não encontrado");
+		if (usuario == null) {
+			throw new UsernameNotFoundException("Usuário não cadastrado!");
 		}
 		return new User(usuario.getUsername(), usuario.getPassword(), true, true, true, true, usuario.getAuthorities());
-	}
 
+	}
 }

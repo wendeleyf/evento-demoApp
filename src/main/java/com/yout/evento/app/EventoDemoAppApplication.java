@@ -11,8 +11,11 @@ public class EventoDemoAppApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(EventoDemoAppApplication.class, args);
-		// sempre que inicializar o sistema passará a senha criptografada
-		System.out.print(new BCryptPasswordEncoder().encode("123"));
+		/* desativado
+		 * 
+		 * sempre que inicializar o sistema passará a senha criptografada
+		 * System.out.print(new BCryptPasswordEncoder().encode("123"));
+		 */
 	}
 
 }
