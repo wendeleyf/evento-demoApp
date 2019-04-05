@@ -1,5 +1,6 @@
 package com.yout.evento.app.model;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -13,12 +14,14 @@ import javax.validation.constraints.NotEmpty;
 
 @Entity
 @Table(name = "evento")
-public class Evento {
+public class Evento implements Serializable {
+
+	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	
+
 	@NotEmpty
 	@Column
 	private String nome;
@@ -33,7 +36,6 @@ public class Evento {
 	private String horario;
 	@OneToMany
 	private List<Convidado> convidados;
-	
 
 	/**
 	 * @return the convidados
