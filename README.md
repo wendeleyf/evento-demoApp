@@ -10,6 +10,9 @@ Simples aplicação web para cadastro de eventos, aplicando conhecimento em Java
 - Eclipse
 - Spring Tools 3 +
 
+#### Backup database
+> Backup: [eventodemoapp.sql](https://github.com/cleefsouza/evento-demoApp/blob/master/database/)
+
 #### Deploy
 - Heroku
 
