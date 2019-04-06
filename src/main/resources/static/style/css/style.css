@@ -1,0 +1,39 @@
+* {
+	padding: 0;
+	margin: 0;
+	vertical-align: baseline;
+	list-style: none;
+	border: 0
+}
+
+.myNavbar {
+	border-radius: 0px !important;
+}
+
+.fContainer {
+	margin-top: 0.5em;
+	margin-bottom: 5em;
+}
+
+.fContainer h5 {
+	margin-bottom: 1em;
+}
+
+.footer {
+	padding: 1em;
+	color: white;
+	font-size: 11px;
+}
+
+.footer a {
+	color: white;
+}
+
+.footer a:hover {
+	text-decoration: none;
+	color: #9d9d9d;
+}
+
+.delLink {
+	color: red;
+}
