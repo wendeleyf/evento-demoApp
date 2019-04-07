@@ -23,8 +23,9 @@ $ heroku open
 ```
 
 #### Link
-> Aplicação: https://eventosdemoapp.herokuapp.com/
-> User: root | Pass: root
+> Aplicação: https://eventosdemoapp.herokuapp.com/ <br>
+- *User:* root<br>
+- *Pass:* root
 
 #### Screenshots
 <img src="https://github.com/cleefsouza/evento-demoApp/blob/master/screenshots/index.PNG" width="500px"/><br/>
