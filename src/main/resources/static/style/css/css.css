@@ -5,19 +5,20 @@
 }
 
 .my-container {
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	display: block;
+	margin: 2em;
 	overflow: auto;
 }
 
 .my-container>div {
-	width: 90%;
+	width: 80vw;
+}
+
+.container-center {
+	align-self: center;
 }
 
 .my-nav {
-	display: flex;
-	align-items: center;
 	padding: 0.5em;
 	background-color: #333333;
 }
@@ -31,14 +32,13 @@
 }
 
 .my-footer {
-	display: flex;
-	flex-flow: row wrap;
-	align-items: center;
-	justify-content: center;
+	justify-self: center;
 	font-size: 12px;
 	padding: 1.1em;
 	width: 100vw;
 	background-color: #333333;
+	bottom: 0;
+	position: fixed;
 }
 
 .my-footer a {
@@ -69,11 +69,12 @@
 
 .item3 {
 	grid-area: footer;
+	display: flex;
+	justify-content: center;
 }
 
 .grid-container {
 	display: grid;
 	grid-template-areas: 'header' 'main' 'footer';
 	grid-template-rows: 10vh 80vh 10vh;
-	background-color: #FFFFFF;
 }
