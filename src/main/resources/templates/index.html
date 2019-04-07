@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://thymeleaf.org"
-	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<html>
 <head>
 <!-- meta -->
 <meta charset="utf-8">
@@ -25,35 +24,33 @@
 <title>Evento Demo App</title>
 </head>
 <body>
-	<!-- navbar -->
-	<nav class="navbar navbar-inverse myNavbar">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<a class="navbar-brand" href="/">Evento Demo App</a>
+	<div class="grid-container">
+		<!-- navbar -->
+		<section class="item1 my-nav">
+			<a class="navbar-brand" href="/">Evento Demo App</a>
+		</section>
+		<!-- container -->
+		<section class="item2 my-container">
+			<div class="container">
+				<div class="jumbotron text-center">
+					<h1>Evento Demo App</h1>
+					<p>Está é uma aplicação simples para cadastro de eventos, com o
+						intuito de demonstrar um pouco do meu conhecimento no
+						desenvolvimento de aplicações web com Java e Spring Boot.</p>
+					<a class="btn btn-lg btn-success" href="/eventos" role="button"><i
+						class="fas fa-play-circle"></i> Start Demo App</a>
+				</div>
 			</div>
-		</div>
-	</nav>
-
-	<!-- container -->
-	<div class="container">
-		<div class="jumbotron text-center">
-			<h1>Evento Demo App</h1>
-			<p>Está é uma aplicação simples para cadastro de eventos, com o
-				intuito de demonstrar um pouco do meu conhecimento no
-				desenvolvimento de aplicações web com Java e Spring Boot.</p>
-			<a class="btn btn-lg btn-success" href="/eventos" role="button"><i
-				class="fas fa-play-circle"></i> Start Demo App</a>
-		</div>
+		</section>
+		<!-- footer -->
+		<div class="item3 my-footer">
+			<a href="https://github.com/cleefsouza/evento-demoApp"><i
+				class="fab fa-github"></i> Github</a> <a
+				href="https://www.linkedin.com/in/aryosvalldo-cleef/"><i
+				class="fab fa-linkedin-in"></i> Aryosvalldo Cleef de Souza</a> <a
+				href="https://www.instagram.com/cleefsouza/"><i
+				class="fab fa-instagram"></i> Siga-me</a>
+		</section>
 	</div>
-
-	<!-- footer -->
-	<footer class="footer navbar-inverse navbar-fixed-bottom text-center">
-		<div>
-			<a href="https://www.linkedin.com/in/aryosvalldo-cleef/"><i
-				class="fab fa-linkedin-in"></i> Aryosvalldo Cleef de Souza</a><br /> <a
-				href="https://github.com/cleefsouza/evento-demoApp"><i
-				class="fab fa-github"></i> Github Evento Demo App</a>
-		</div>
-	</footer>
 </body>
 </html>

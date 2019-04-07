@@ -25,102 +25,106 @@
 <title>Evento Demo App</title>
 </head>
 <body>
-	<!-- navbar -->
-	<nav class="navbar navbar-inverse myNavbar">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<a class="navbar-brand" href="/">Evento Demo App</a>
+	<div class="grid-container">
+		<!-- navbar -->
+		<section class="item1 my-nav">
+			<a class="navbar-brand" href="/">Evento Demo App</a>
+		</section>
+		<!-- container -->
+		<section class="item2 my-container">
+			<div class="container">
+					<!-- detalhes do evento -->
+					<h2>Detalhes do Evento</h2>
+					<table class="table">
+						<thead>
+							<th>Nome</th>
+							<th>Local</th>
+							<th>Data</th>
+							<th>Horário</th>
+						</thead>
+						<tbody>
+							<tr th:each="evento : ${evento}">
+								<td><span th:text="${evento.nome}"></span></td>
+								<td><span th:text="${evento.local}"></span></td>
+								<td><span th:text="${evento.data}"></span></td>
+								<td><span th:text="${evento.horario}"></span></td>
+							</tr>
+						</tbody>
+					</table>
+				<!-- lista de convidados -->
+				<h4>Lista de Convidados</h4>
+				<table class="table">
+					<thead>
+						<th>RG</th>
+						<th>Nome</th>
+						<th>Sobrenome</th>
+						<th>Idade</th>
+						<th>Deletar</th>
+					</thead>
+					<tbody>
+						<tr th:each="convidado : ${convidados}">
+							<td><span th:text="${convidado.rg}"></span></td>
+							<td><span th:text="${convidado.nome}"></span></td>
+							<td><span th:text="${convidado.sobrenome}"></span></td>
+							<td><span th:text="${convidado.idade}"></span></td>
+							<td class="del-link"><a
+								th:href="${(#mvc.url('EC#delConvidado').arg(0, convidado.rg).build())}"><i
+									class="fas fa-trash" title="Remover Convidado"></i></a></td>
+						</tr>
+					</tbody>
+				</table>
+				<!-- adicionar convidados -->
+				<h3>Adicionar Convidado</h3>
+				<!-- inclui a mensagem -->
+				<th:block th:include="msgValidation.html" />
+				<form method="post">
+					<div class="row">
+						<div class="col-md-6 form-group">
+							<label class="control-label">Nome:</label> <input
+								class="form-control" type="text" name="nome" value="" required
+								oninvalid="setCustomValidity('Campo obrigatório!')"
+								oninput="setCustomValidity('')">
+						</div>
+						<div class="col-md-6 form-group">
+							<label class="control-label">Sobrenome:</label> <input
+								class="form-control" type="text" name="sobrenome" value=""
+								required oninvalid="setCustomValidity('Campo obrigatório!')"
+								oninput="setCustomValidity('')">
+						</div>
+						<div class="col-md-6 form-group">
+							<label class="control-label">RG:</label> <input
+								class="form-control" type="text" name="rg" value="" required
+								oninvalid="setCustomValidity('Campo obrigatório!')"
+								oninput="setCustomValidity('')">
+						</div>
+						<div class="col-md-6 form-group">
+							<label class="control-label">Idade:</label> <input
+								class="form-control" type="text" name="idade" value="" required
+								oninvalid="setCustomValidity('Campo obrigatório!')"
+								oninput="setCustomValidity('')">
+						</div>
+						<div class="col-md-2 form-group">
+							<button class="btn btn-success btn-block" type="submit">
+								<i class="fas fa-check"></i> Adicionar
+							</button>
+						</div>
+						<div class="col-md-2 form-group">
+							<a class="btn btn-danger btn-block" href="/eventos"><i
+								class="fas fa-angle-left"></i> Voltar</a>
+						</div>
+					</div>
+				</form>
 			</div>
-		</div>
-	</nav>
-
-	<!-- container -->
-	<div class="container fContainer">
-		<!-- detalhes do evento -->
-		<h2>Detalhes do Evento</h2>
-		<table class="table">
-			<thead>
-				<th>Nome</th>
-				<th>Local</th>
-				<th>Data</th>
-				<th>Horário</th>
-			</thead>
-			<tbody>
-				<tr th:each="evento : ${evento}">
-					<td><span th:text="${evento.nome}"></span></td>
-					<td><span th:text="${evento.local}"></span></td>
-					<td><span th:text="${evento.data}"></span></td>
-					<td><span th:text="${evento.horario}"></span></td>
-				</tr>
-			</tbody>
-		</table>
-
-		<!-- lista de convidados -->
-		<h4>Lista de Convidados</h4>
-		<table class="table">
-			<thead>
-				<th>RG</th>
-				<th>Nome</th>
-				<th>Sobrenome</th>
-				<th>Idade</th>
-				<th>Deletar</th>
-			</thead>
-			<tbody>
-				<tr th:each="convidado : ${convidados}">
-					<td><span th:text="${convidado.rg}"></span></td>
-					<td><span th:text="${convidado.nome}"></span></td>
-					<td><span th:text="${convidado.sobrenome}"></span></td>
-					<td><span th:text="${convidado.idade}"></span></td>
-					<td><a class="delLink"
-						th:href="${(#mvc.url('EC#delConvidado').arg(0, convidado.rg).build())}"><i
-							class="fas fa-trash" title="Remover Convidado"></i></a></td>
-				</tr>
-			</tbody>
-		</table>
-
-		<!-- adicionar convidados -->
-		<h3>Adicionar Convidado</h3>
-		<!-- inclui a mensagem -->
-		<th:block th:include="msgValidation.html"></th:block>
-		<form method="post">
-			<div class="row">
-				<div class="col-md-6 form-group">
-					<label class="control-label">Nome:</label> <input
-						class="form-control" type="text" name="nome" value="" required oninvalid="setCustomValidity('Campo obrigatório!')" oninput="setCustomValidity('')">
-				</div>
-				<div class="col-md-6 form-group">
-					<label class="control-label">Sobrenome:</label> <input
-						class="form-control" type="text" name="sobrenome" value="" required oninvalid="setCustomValidity('Campo obrigatório!')" oninput="setCustomValidity('')">
-				</div>
-				<div class="col-md-6 form-group">
-					<label class="control-label">RG:</label> <input
-						class="form-control" type="text" name="rg" value="" required oninvalid="setCustomValidity('Campo obrigatório!')" oninput="setCustomValidity('')">
-				</div>
-				<div class="col-md-6 form-group">
-					<label class="control-label">Idade:</label> <input
-						class="form-control" type="text" name="idade" value="" required oninvalid="setCustomValidity('Campo obrigatório!')" oninput="setCustomValidity('')">
-				</div>
-				<div class="col-md-2 form-group">
-					<button class="btn btn-success btn-block" type="submit">
-						<i class="fas fa-check"></i> Adicionar
-					</button>
-				</div>
-				<div class="col-md-2 form-group">
-					<a class="btn btn-danger btn-block" href="/eventos"><i
-						class="fas fa-angle-left"></i> Voltar</a>
-				</div>
-			</div>
-		</form>
+		</section>
+		<!-- footer -->
+		<section class="item3 my-footer">
+			<a href="https://github.com/cleefsouza/evento-demoApp"><i
+				class="fab fa-github"></i> Github</a> <a
+				href="https://www.linkedin.com/in/aryosvalldo-cleef/"><i
+				class="fab fa-linkedin-in"></i> Aryosvalldo Cleef de Souza</a> <a
+				href="https://www.instagram.com/cleefsouza/"><i
+				class="fab fa-instagram"></i> Siga-me</a>
+		</section>
 	</div>
-
-	<!-- footer -->
-	<footer class="footer navbar-inverse navbar-fixed-bottom text-center">
-		<div>
-			<a href="https://www.linkedin.com/in/aryosvalldo-cleef/"><i
-				class="fab fa-linkedin-in"></i> Aryosvalldo Cleef de Souza</a><br /> <a
-				href="https://github.com/cleefsouza/evento-demoApp"><i
-				class="fab fa-github"></i> Github Evento Demo App</a>
-		</div>
-	</footer>
 </body>
 </html>

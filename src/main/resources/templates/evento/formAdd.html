@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
 <!-- meta -->
 <meta charset="utf-8">
@@ -24,60 +25,66 @@
 <title>Evento Demo App</title>
 </head>
 <body>
-	<!-- navbar -->
-	<nav class="navbar navbar-inverse myNavbar">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<a class="navbar-brand" href="/">Evento Demo App</a>
+	<div class="grid-container">
+		<!-- navbar -->
+		<section class="item1 my-nav">
+			<a class="navbar-brand" href="/">Evento Demo App</a>
+		</section>
+		<!-- container -->
+		<section class="item2 my-container">
+			<!-- adicionar evento -->
+			<div class="container form-container">
+				<h2>Cadastrar Evento</h2>
+				<!-- inclui a mensagem -->
+				<th:block th:include="msgValidation.html" />
+				<form method="post">
+					<div class="row">
+						<div class="col-md-12 form-group">
+							<label class="control-label">Nome:</label> <input
+								class="form-control" type="text" name="nome" value="" required
+								oninvalid="setCustomValidity('Campo obrigatório!')"
+								oninput="setCustomValidity('')">
+						</div>
+						<div class="col-md-6 form-group">
+							<label class="control-label">Local:</label> <input
+								class="form-control" type="text" name="local" value="" required
+								oninvalid="setCustomValidity('Campo obrigatório!')"
+								oninput="setCustomValidity('')">
+						</div>
+						<div class="col-md-3 form-group">
+							<label class="control-label">Data:</label> <input
+								class="form-control" type="date" name="data" value="" required
+								oninvalid="setCustomValidity('Campo obrigatório!')"
+								oninput="setCustomValidity('')">
+						</div>
+						<div class="col-md-3 form-group">
+							<label class="control-label">Horário:</label> <input
+								class="form-control" type="time" name="horario" value=""
+								required oninvalid="setCustomValidity('Campo obrigatório!')"
+								oninput="setCustomValidity('')">
+						</div>
+						<div class="col-md-2 form-group">
+							<button class="btn btn-success btn-block" type="submit">
+								<i class="fas fa-check"></i> Salvar
+							</button>
+						</div>
+						<div class="col-md-2 form-group">
+							<a class="btn btn-danger btn-block" href="/eventos"><i
+								class="fas fa-angle-left"></i> Voltar</a>
+						</div>
+					</div>
+				</form>
 			</div>
-		</div>
-	</nav>
-
-	<!-- container -->
-	<div class="container fContainer">
-		<!-- adicionar evento -->
-		<h2>Cadastrar Evento</h2>
-		<!-- inclui a mensagem -->
-		<th:block th:include="msgValidation.html"></th:block>
-		<form method="post">
-			<div class="row">
-				<div class="col-md-12 form-group">
-					<label class="control-label">Nome:</label> <input
-						class="form-control" type="text" name="nome" value="" required oninvalid="setCustomValidity('Campo obrigatório!')" oninput="setCustomValidity('')">
-				</div>
-				<div class="col-md-6 form-group">
-					<label class="control-label">Local:</label> <input
-						class="form-control" type="text" name="local" value="" required oninvalid="setCustomValidity('Campo obrigatório!')" oninput="setCustomValidity('')">
-				</div>
-				<div class="col-md-3 form-group">
-					<label class="control-label">Data:</label> <input
-						class="form-control" type="date" name="data" value="" required oninvalid="setCustomValidity('Campo obrigatório!')" oninput="setCustomValidity('')">
-				</div>
-				<div class="col-md-3 form-group">
-					<label class="control-label">Horário:</label> <input
-						class="form-control" type="time" name="horario" value="" required oninvalid="setCustomValidity('Campo obrigatório!')" oninput="setCustomValidity('')">
-				</div>
-				<div class="col-md-2 form-group">
-					<button class="btn btn-success btn-block" type="submit">
-						<i class="fas fa-check"></i> Salvar
-					</button>
-				</div>
-				<div class="col-md-2 form-group">
-					<a class="btn btn-danger btn-block" href="/eventos"><i
-						class="fas fa-angle-left"></i> Voltar</a>
-				</div>
-			</div>
-		</form>
+		</section>
+		<!-- footer -->
+		<section class="item3 my-footer">
+			<a href="https://github.com/cleefsouza/evento-demoApp"><i
+				class="fab fa-github"></i> Github</a> <a
+				href="https://www.linkedin.com/in/aryosvalldo-cleef/"><i
+				class="fab fa-linkedin-in"></i> Aryosvalldo Cleef de Souza</a> <a
+				href="https://www.instagram.com/cleefsouza/"><i
+				class="fab fa-instagram"></i> Siga-me</a>
+		</section>
 	</div>
-
-	<!-- footer -->
-	<footer class="footer navbar-inverse navbar-fixed-bottom text-center">
-		<div>
-			<a href="https://www.linkedin.com/in/aryosvalldo-cleef/"><i
-				class="fab fa-linkedin-in"></i> Aryosvalldo Cleef de Souza</a><br /> <a
-				href="https://github.com/cleefsouza/evento-demoApp"><i
-				class="fab fa-github"></i> Github Evento Demo App</a>
-		</div>
-	</footer>
 </body>
 </html>
