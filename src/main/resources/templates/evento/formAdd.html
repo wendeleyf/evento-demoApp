@@ -25,14 +25,13 @@
 <title>Evento Demo App</title>
 </head>
 <body>
-	<div class="grid-container">
+	<div class="flex-container">
 		<!-- navbar -->
-		<section class="item1 my-nav">
+		<div class="my-nav">
 			<a class="navbar-brand" href="/">Evento Demo App</a>
-		</section>
+		</div>
 		<!-- container -->
-		<section class="item2 my-container container-center">
-			<!-- adicionar evento -->
+		<div class="my-container">
 			<div class="container">
 				<h2>Cadastrar Evento</h2>
 				<!-- inclui a mensagem -->
@@ -41,13 +40,13 @@
 					<div class="row">
 						<div class="col-md-12 form-group">
 							<label class="control-label">Nome:</label> <input
-								class="form-control" type="text" name="nome" value="" required
+								class="form-control" type="text" placeholder="Ex: Exposição de Exemplos" name="nome" value="" required
 								oninvalid="setCustomValidity('Campo obrigatório!')"
 								oninput="setCustomValidity('')">
 						</div>
 						<div class="col-md-6 form-group">
 							<label class="control-label">Local:</label> <input
-								class="form-control" type="text" name="local" value="" required
+								class="form-control" type="text" placeholder="Ex: Teatro Model Exemplos" name="local" value="" required
 								oninvalid="setCustomValidity('Campo obrigatório!')"
 								oninput="setCustomValidity('')">
 						</div>
@@ -75,16 +74,16 @@
 					</div>
 				</form>
 			</div>
-		</section>
+		</div>
 		<!-- footer -->
-		<section class="item3 my-footer">
+		<div class="my-footer">
 			<a href="https://github.com/cleefsouza/evento-demoApp"><i
 				class="fab fa-github"></i> Github</a> <a
 				href="https://www.linkedin.com/in/aryosvalldo-cleef/"><i
 				class="fab fa-linkedin-in"></i> Aryosvalldo Cleef de Souza</a> <a
 				href="https://www.instagram.com/cleefsouza/"><i
 				class="fab fa-instagram"></i> Siga-me</a>
-		</section>
+		</div>
 	</div>
 </body>
 </html>

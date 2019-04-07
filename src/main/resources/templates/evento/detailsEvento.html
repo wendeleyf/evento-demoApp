@@ -25,32 +25,32 @@
 <title>Evento Demo App</title>
 </head>
 <body>
-	<div class="grid-container">
+	<div class="flex-container">
 		<!-- navbar -->
-		<section class="item1 my-nav">
+		<div class="my-nav">
 			<a class="navbar-brand" href="/">Evento Demo App</a>
-		</section>
+		</div>
 		<!-- container -->
-		<section class="item2 my-container">
+		<div class="my-container">
 			<div class="container">
-					<!-- detalhes do evento -->
-					<h2>Detalhes do Evento</h2>
-					<table class="table">
-						<thead>
-							<th>Nome</th>
-							<th>Local</th>
-							<th>Data</th>
-							<th>Horário</th>
-						</thead>
-						<tbody>
-							<tr th:each="evento : ${evento}">
-								<td><span th:text="${evento.nome}"></span></td>
-								<td><span th:text="${evento.local}"></span></td>
-								<td><span th:text="${evento.data}"></span></td>
-								<td><span th:text="${evento.horario}"></span></td>
-							</tr>
-						</tbody>
-					</table>
+				<!-- detalhes do evento -->
+				<h2>Detalhes do Evento</h2>
+				<table class="table">
+					<thead>
+						<th>Nome</th>
+						<th>Local</th>
+						<th>Data</th>
+						<th>Horário</th>
+					</thead>
+					<tbody>
+						<tr th:each="evento : ${evento}">
+							<td><span th:text="${evento.nome}"></span></td>
+							<td><span th:text="${evento.local}"></span></td>
+							<td><span th:text="${evento.data}"></span></td>
+							<td><span th:text="${evento.horario}"></span></td>
+						</tr>
+					</tbody>
+				</table>
 				<!-- lista de convidados -->
 				<h4>Lista de Convidados</h4>
 				<table class="table">
@@ -81,25 +81,26 @@
 					<div class="row">
 						<div class="col-md-6 form-group">
 							<label class="control-label">Nome:</label> <input
-								class="form-control" type="text" name="nome" value="" required
+								class="form-control" type="text" placeholder="Ex: João" name="nome" value="" required
 								oninvalid="setCustomValidity('Campo obrigatório!')"
 								oninput="setCustomValidity('')">
 						</div>
 						<div class="col-md-6 form-group">
 							<label class="control-label">Sobrenome:</label> <input
-								class="form-control" type="text" name="sobrenome" value=""
+								class="form-control" type="text" placeholder="Ex: da Silva" name="sobrenome" value=""
 								required oninvalid="setCustomValidity('Campo obrigatório!')"
 								oninput="setCustomValidity('')">
 						</div>
 						<div class="col-md-6 form-group">
 							<label class="control-label">RG:</label> <input
-								class="form-control" type="text" name="rg" value="" required
+								class="form-control rg" type="text" pattern=".{7}"
+								placeholder="Ex: 1234567" name="rg" value="" required
 								oninvalid="setCustomValidity('Campo obrigatório!')"
 								oninput="setCustomValidity('')">
 						</div>
 						<div class="col-md-6 form-group">
 							<label class="control-label">Idade:</label> <input
-								class="form-control" type="text" name="idade" value="" required
+								class="form-control" type="text" placeholder="Ex: 21" name="idade" value="" required
 								oninvalid="setCustomValidity('Campo obrigatório!')"
 								oninput="setCustomValidity('')">
 						</div>
@@ -115,16 +116,16 @@
 					</div>
 				</form>
 			</div>
-		</section>
+		</div>
 		<!-- footer -->
-		<section class="item3 my-footer">
+		<div class="my-footer">
 			<a href="https://github.com/cleefsouza/evento-demoApp"><i
 				class="fab fa-github"></i> Github</a> <a
 				href="https://www.linkedin.com/in/aryosvalldo-cleef/"><i
 				class="fab fa-linkedin-in"></i> Aryosvalldo Cleef de Souza</a> <a
 				href="https://www.instagram.com/cleefsouza/"><i
 				class="fab fa-instagram"></i> Siga-me</a>
-		</section>
+		</div>
 	</div>
 </body>
 </html>
