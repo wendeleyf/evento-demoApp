@@ -148,16 +148,8 @@ INSERT INTO public.role(
 
 INSERT INTO public.usuario(
 	login, pass)
-	VALUES ('root', 'root');
-
-INSERT INTO public.usuario(
-	login, pass)
-	VALUES ('user', 'user');
+	VALUES ('root', '$2a$10$Q8VEH..muagnXUG3/S.22OWSoNcFaff4h7L1pg8UmjS9BwsXxaqrW');
 
 INSERT INTO public.usuarios_roles(
 	usuario_id, role_id)
 	VALUES ('root', 'ROLE_ROOT');
-
-INSERT INTO public.usuarios_roles(
-	usuario_id, role_id)
-	VALUES ('user', 'ROLE_USER');
